@@ -1,10 +1,13 @@
+import 'regenerator-runtime/runtime'
 import Phaser from 'phaser'
 
-import HelloWorldScene from './scenes/HelloWorldScene'
+import Bootstrap from './scenes/Bootstrap'
+import Game from './scenes/Game'
+import GameOver from './scenes/GameOver'
 
 const config: Phaser.Types.Core.GameConfig = {
 	type: Phaser.AUTO,
-	width: 800,
+	width: 600,
 	height: 600,
 	physics: {
 		default: 'arcade',
@@ -12,7 +15,7 @@ const config: Phaser.Types.Core.GameConfig = {
 			gravity: { y: 200 }
 		}
 	},
-	scene: [HelloWorldScene]
+	scene: [Bootstrap, Game, GameOver]
 }
 
 export default new Phaser.Game(config)
